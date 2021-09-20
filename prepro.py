@@ -183,6 +183,7 @@ class RETACREDProcessor(Processor):
             rel = self.LABEL_TO_ID[d['relation']]
 
             feature = {
+                'id':d['id'],
                 'input_ids': input_ids,
                 'labels': rel,
                 'ss': new_ss,

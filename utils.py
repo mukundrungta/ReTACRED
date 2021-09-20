@@ -18,10 +18,11 @@ def collate_fn(batch):
     labels = [f["labels"] for f in batch]
     ss = [f["ss"] for f in batch]
     os = [f["os"] for f in batch]
+    ids = [f["id"] for f in batch]
     input_ids = torch.tensor(input_ids, dtype=torch.long)
     input_mask = torch.tensor(input_mask, dtype=torch.float)
     labels = torch.tensor(labels, dtype=torch.long)
     ss = torch.tensor(ss, dtype=torch.long)
     os = torch.tensor(os, dtype=torch.long)
-    output = (input_ids, input_mask, labels, ss, os)
+    output = (input_ids, input_mask, labels, ss, os,ids)
     return output
