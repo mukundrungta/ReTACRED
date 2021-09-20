@@ -78,7 +78,7 @@ def evaluate(args, model, features, tag='dev',steps=0):
             logit = model(**inputs)[0]
             pred = torch.argmax(logit, dim=-1)
         preds += pred.tolist()
-        batch_list += batch[5].tolist()
+        batch_list += batch[5]
     output = {'id':batch_list,'keys':keys,'preds':preds}
     keys = np.array(keys, dtype=np.int64)
     preds = np.array(preds, dtype=np.int64)
